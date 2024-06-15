@@ -68,3 +68,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
  
   //git remote add origin https://github.com/javadtab/Blog.git
 
+  // git commit -m "add remote"
+
+  // git push -u origin master
+  
