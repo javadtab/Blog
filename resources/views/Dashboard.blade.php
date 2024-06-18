@@ -26,7 +26,7 @@
         <a  href="{{ route('posts.create') }}">Create post</a>
         <hr>
         @can('read user')
-         <a class= "nav-link" href= "{{ route('users')}}">Users</a>
+         <a  href= "{{ route('users')}}">Users</a>
         @endcan
         <hr>
         <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
