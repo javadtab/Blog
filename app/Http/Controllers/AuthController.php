@@ -33,6 +33,10 @@ class AuthController extends Controller
     {
         return view('Dashboard');
     }
+    function profile()
+    {
+        return view('profile');
+    }
 
     public function login()
     {
