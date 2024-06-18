@@ -19,6 +19,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard') }}">Home Page</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('posts.create') }}">Create post</a>
                     </li>
                     <li class="nav-item">

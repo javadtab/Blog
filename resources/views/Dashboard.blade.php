@@ -19,7 +19,7 @@
             </button>
     </nav>
     <div class="container">
-        <h1><strong> Welcome</strong></h1>
+        <h1><strong>Home Page</strong></h1>
         <hr>
         <a  href="{{ route('posts.index') }}">Posts list</a>
         <hr>
@@ -28,6 +28,7 @@
         @can('read user')
          <a class= "nav-link" href= "/users">Users</a>
         @endcan
+        <hr>
         <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
             @csrf
             @method ('Delete')
