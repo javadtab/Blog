@@ -27,6 +27,6 @@ Route::get('/posts/{post}/edit',[ PostController::class ,'edit'])->name('posts.e
 Route::delete('/posts/{post}/delete', [PostController::class, 'destroy']);
 ///////////////////////////////////////////////////////////////
 
-Route::get('/users' , [UserController::class , 'index']);
+Route::get('/users' , [UserController::class , 'index'])->name('users');
 Route::get('/users/{user}/edit' , [UserController::class ,'edit']);
 Route::patch('/users/{user}' , [UserController::class , 'update']);
