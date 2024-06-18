@@ -15,6 +15,7 @@ Route::post('/register', [AuthController::class, 'registerPost'])->name('registe
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 /////////////////////////////////////////////////////////////
 Route::get('/posts', [PostController::class ,'index'])->name('posts.index');
