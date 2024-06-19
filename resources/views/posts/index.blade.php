@@ -52,7 +52,7 @@
                         /width="150px" alt="">
                     <br>
                     <h6 class="float-end">Written By:{{ $post->user->name }}</h6>
-
+<div class="display : inlline"
                     @can('edit' , $post)
                         <a href="{{ url('/posts/' . $post->id . '/edit') }}" class="btn btn-success" role="button">Edit</a>
                     @endcan
@@ -64,6 +64,8 @@
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     @endcan
+
+</div>
                     <hr>
                     <hr>
                 </div>
