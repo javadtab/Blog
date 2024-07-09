@@ -1,6 +1,3 @@
-
-@extends('layouts.app')
-@section('content')
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +30,6 @@
         @endcan
         <hr>
 
-        @foreach ($posts as $post)
         <div class="row">
             <div class="col-12">
                 <div class="row">
@@ -64,7 +60,7 @@
                 <hr>
             </div>
         </div>
-    @endforeach
+
 
 
         <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
