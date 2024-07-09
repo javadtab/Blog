@@ -30,6 +30,12 @@
         @endcan
         <hr>
 
+
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
         <div class="row">
             <div class="col-12">
                 <div class="row">
