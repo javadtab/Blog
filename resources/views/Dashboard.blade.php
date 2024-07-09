@@ -29,46 +29,6 @@
          <a  href= "{{ route('users')}}">Users</a>
         @endcan
         <hr>
-
-
-        @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-        @endif
-        <div class="row">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-2">
-                    </div>
-                    <div>
-                        <h3>{{ $post->title }}</h3>
-                    </div>
-                </div>
-                <p>{{ $post->description }}</p>
-
-                <img class="img-fluid" style="max-width:50%;" src="{{ $post->getFirstMediaUrl('images') }}"
-                    /width="150px" alt="">
-                <br>
-                <h6 class="float-end">Written By:{{ $post->user->name }}</h6>
-                @can('edit' , $post)
-                    <a href="{{ url('/posts/' . $post->id . '/edit') }}" class="btn btn-success" role="button">Edit</a>
-                @endcan
-
-                @can('destroy' , $post )
-                    <form method="POST" action="{{ url('/posts/' . $post->id . '/delete') }}">
-                        @method('Delete')
-                        @csrf
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                @endcan
-                <hr>
-                <hr>
-            </div>
-        </div>
-
-
-
         <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
             @csrf
             @method ('Delete')
