@@ -42,7 +42,7 @@
         </div>
     </nav>
     <div class="container">
-        <h1><strong> {{ Auth::user()->name}} `s information</strong></h1>
+        <h1><strong> {{ Auth::user()->name}}`s information</strong></h1>
         <hr>
         <h2>Name :{{ Auth::user()->name }} </h2>
         <h2>Email Adress :{{ Auth::user()->email }} </h2>
