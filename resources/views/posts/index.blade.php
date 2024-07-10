@@ -47,8 +47,9 @@
                             <h3>{{ $post->title }}</h3>
                         </div>
                     </div>
+                    <div>
                     <p>{{ $post->description }}</p>
-
+                    </div>
                     <img class="img-fluid" style="max-width:50%;" src="{{ $post->getFirstMediaUrl('images') }}"
                         /width="150px" alt="">
                     <br>
