@@ -42,6 +42,7 @@
                     <div class="row">
                         <div class="col-2">
                         </div>
+                        <h6 class="float-end">{{ $post->created_at }}</h6>
                         <div>
                             <h3>{{ $post->title }}</h3>
                         </div>
@@ -52,6 +53,7 @@
                         /width="150px" alt="">
                     <br>
                     <h6 class="float-end">Written By:{{ $post->user->name }}</h6>
+
                     @can('edit' , $post)
                         <a href="{{ url('/posts/' . $post->id . '/edit') }}" class="btn btn-success" role="button">Edit</a>
                     @endcan
