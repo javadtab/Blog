@@ -51,7 +51,7 @@
                     <p>{{ $post->description }}</p>
                     </div>
                     <img class="img-fluid" style="max-width:50%;" src="{{ $post->getFirstMediaUrl('images') }}"
-                        /width="150px" alt="">
+                        /width="1500px" alt="">
                     <br>
                     <h6 class="float-end">Written By:{{ $post->user->name }}</h6>
 
