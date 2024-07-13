@@ -27,7 +27,7 @@ class AuthControllerTest extends TestCase
 
 public function login_displays_validation_errors()
 {
-    $response = $this->post('/login', []);
+    $response = $this->post('login', []);
     $response->assertStatus(302);
     $response->assertSessionHasErrors('email');
 }
