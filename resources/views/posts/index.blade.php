@@ -42,19 +42,19 @@
                     <div class="row">
                         <div class="col-2">
                         </div>
-                        <h6 class="float-end">{{ $post->created_at }}</h6>
+
                         <div>
-                            <h3>{{ $post->title }}</h3>
+                            <h3 style="color:coral">{{ $post->title }}</h3>
                         </div>
                     </div>
                     <div>
                     <p>{{ $post->description }}</p>
                     </div>
-                    <img class="img-fluid" style="max-width:100%;" src="{{ $post->getFirstMediaUrl('images') }}"
+                    <img class="img-fluid" style="max-width:100;" src="{{ $post->getFirstMediaUrl('images') }}"
                         /width="1000px" alt="">
                     <br>
                     <h6 class="float-end">Written By:{{ $post->user->name }}</h6>
-
+                    <h6 class="float-end">{{ $post->created_at }}</h6>
                     @can('edit' , $post)
                         <a href="{{ url('/posts/' . $post->id . '/edit') }}" class="btn btn-success" role="button">Edit</a>
                     @endcan
