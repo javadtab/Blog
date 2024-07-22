@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container" style="background-color:aqua">
+    <div class="container" style="background-color:gray">
         <div class="titlebar">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
