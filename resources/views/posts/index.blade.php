@@ -37,7 +37,7 @@
             </div>
         @endif
         @foreach ($posts as $post)
-            <div class="row">
+            <div class="row" style="background-color:bisque">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-2">
@@ -54,7 +54,7 @@
                         /width="1000px" alt="">
                     <br>
                     <h6 class="float-end">Written By:{{ $post->user->name }}</h6>
-                    <h6 class="float-end" style="text-alin:center">{{ $post->created_at }}</h6>
+                    <h6 class="float-end">{{ $post->created_at }}</h6>
                     @can('edit' , $post)
                         <a href="{{ url('/posts/' . $post->id . '/edit') }}" class="btn btn-success" role="button">Edit</a>
                     @endcan
