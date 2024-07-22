@@ -17,7 +17,7 @@
 </header>
 
 <!-- Body -->
-<body>
+<body style="background-color:darkolivegreen">
   @yield('content')
 </body>
 
