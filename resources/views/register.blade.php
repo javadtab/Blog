@@ -29,6 +29,10 @@
                             @enderror
                         </div>
                         <div class="mb-3">
+                            <label for="ip" class="form-label">Ip</label>
+                            <input type="text" name="ip" class="form-control" id="ip">
+                        </div>
+                        <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" name="email" class="form-control" id="email">
                             @error('email')

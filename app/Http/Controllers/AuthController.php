@@ -20,12 +20,14 @@ class AuthController extends Controller
             'email' => ['required','email','unique:'.User::class],
             'phonenumber' => ['required'],
             'password' => ['required','min:8',Rules\Password::defaults()],
+            'ip' => ['required'],
         ]);
           User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phonenumber' => $request->phonenumber,
             'password' => Hash::make($request->password),
+            'ip' => $request->ip,
         ]);
          return redirect()->route('login');
     }

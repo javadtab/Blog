@@ -45,6 +45,7 @@
         <h1><strong> {{ Auth::user()->name}}`s information</strong></h1>
         <hr>
         <h2>Name :{{ Auth::user()->name }} </h2>
+        <h2>IP :{{ Auth::user()->ip }} </h2>
         <h2>Email Adress :{{ Auth::user()->email }} </h2>
         <h2>PhoneNumber :{{ Auth::user()->phonenumber }} </h2>
     </div>
