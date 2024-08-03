@@ -45,10 +45,10 @@ class AuthController extends Controller
         $long = $data->longitude;
 
         $response =Http::withHeaders([
-            'Api-Key' => 'service.d0c1d868e203425da6ddae12dd443f43',
+           // 'Api-Key' => 'service.d0c1d868e203425da6ddae12dd443f43',
         ])->get("https://api.neshan.org/v4/static",
         [
-            'key'=>'service.d0c1d868e203425da6ddae12dd443f43',
+            'key'=>'service.8b56dd1786fd40ffb2695292285925fc',
             'type'=> 'neshan',
             'zoom' => 16,
             'width' => 620 ,
