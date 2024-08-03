@@ -66,7 +66,34 @@
                 <h3>Latitude: {{ $data->latitude }}</h3>
                 <h3>Longitude: {{ $data->longitude }}</h3>
 
-           </div
+           </div>
+
+           <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Country Name</th>
+                <th scope="col">Country Code</th>
+                <th scope="col">Region Code</th>
+                <th scope="col">Region Name</th>
+                <th scope="col">City Name</th>
+                <th scope="col">Zipcode</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{$data->countryName}}</td>
+                <td>{{ $data->countryCode }}</td>
+                <td>{{ $data->regionCode }}</td>
+                <td>{{ $data->regionName }}</td>
+                <td>{{ $data->cityName }}</td>
+                <td>{{ $data->zipCode }}</td>
+                <td>{{ $data->latitude}}</td>
+                <td>{{ $data->longitude }}</td>
+              </tr>
+            </tbody>
+          </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
