@@ -62,7 +62,7 @@
                 <th scope="col">Country Code</th>
                 <th scope="col">Region Code</th>
                 <th scope="col">Region Name</th>
-                <th scope="col">City Name</th>
+                <th scope="col">Neighbourhood</th>
                 <th scope="col">Zipcode</th>
                 <th scope="col">Latitude</th>
                 <th scope="col">Longitude</th>
