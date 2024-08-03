@@ -55,33 +55,18 @@
             <!--تبدیل کد باینری به عکس و نشان دادن اون 👆👆-->
            </div>
            <hr>
-           <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Country Name</th>
-                <th scope="col">Country Code</th>
-                <th scope="col">Region Code</th>
-                <th scope="col">Region Name</th>
-                <th scope="col">Neighbourhood</th>
-                <th scope="col">Zipcode</th>
-                <th scope="col">Latitude</th>
-                <th scope="col">Longitude</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{{$data->countryName}}</td>
-                <td>{{ $data->countryCode }}</td>
-                <td>{{ $data->regionCode }}</td>
-                <td>{{ $data->regionName }}</td>
-                <td>{{ $data->cityName }}</td>
-                <td>{{ $data->zipCode }}</td>
-                <td>{{ $data->latitude}}</td>
-                <td>{{ $data->longitude }}</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
+           <div>
+            <h3>IP: {{ $data->ip }}</h3>
+            <h3>Country Name: {{ $data->countryName }} </h3>
+            <h3>Country Code: {{ $data->countryCode }}</h3>
+            <h3>Region Code: {{ $data->regionCode }}</h3>
+            <h3>Region Name: {{ $data->regionName }}</h3>
+            <h3>City Name: {{ $data->cityName }}</h3>
+            <h3>Zipcode: {{ $data->zipCode }}</h3>
+            <h3>Latitude: {{ $data->latitude }}</h3>
+            <h3>Longitude: {{ $data->longitude }}</h3>
+
+       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
