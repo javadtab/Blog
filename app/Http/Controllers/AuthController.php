@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rules;
 
 class AuthController extends Controller
@@ -35,11 +36,30 @@ class AuthController extends Controller
     {
         return view('Dashboard');
     }
-    function profile()
+    function profile(Request $request)
     {
-        
+        $ip = $request->ip;
+        $data = \Stevebauman\Location\Facades\Location::get($ip);
 
-        return view('profile');
+        $lat = $data->latitude;
+        $long = $data->longitude;
+
+        $response =Http::withHeaders([
+            'Api-Key' => 'service.d0c1d868e203425da6ddae12dd443f43',
+        ])->get("https://api.neshan.org/v4/static",
+        [
+            'key'=>'service.d0c1d868e203425da6ddae12dd443f43',
+            'type'=> 'neshan',
+            'zoom' => 16,
+            'width' => 620 ,
+            'height'=>400,
+            'center'=> "$lat,$long",
+            'markerToken'=>'421549.NOoYZTUs',
+        ]);
+
+        $map = base64_encode($response);
+
+        return view('profile' , compact('data' , 'map'));
     }
 
     public function login()
