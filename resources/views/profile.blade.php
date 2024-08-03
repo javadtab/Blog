@@ -55,19 +55,6 @@
             <!--تبدیل کد باینری به عکس و نشان دادن اون 👆👆-->
            </div>
            <hr>
-           <div>
-                <h3>IP: {{ $data->ip }}</h3>
-                <h3>Country Name: {{ $data->countryName }} </h3>
-                <h3>Country Code: {{ $data->countryCode }}</h3>
-                <h3>Region Code: {{ $data->regionCode }}</h3>
-                <h3>Region Name: {{ $data->regionName }}</h3>
-                <h3>City Name: {{ $data->cityName }}</h3>
-                <h3>Zipcode: {{ $data->zipCode }}</h3>
-                <h3>Latitude: {{ $data->latitude }}</h3>
-                <h3>Longitude: {{ $data->longitude }}</h3>
-
-           </div>
-
            <table class="table table-bordered">
             <thead>
               <tr>
