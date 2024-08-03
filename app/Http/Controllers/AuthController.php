@@ -37,6 +37,8 @@ class AuthController extends Controller
     }
     function profile()
     {
+        
+
         return view('profile');
     }
 

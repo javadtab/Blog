@@ -13,6 +13,7 @@ class AdminSeeder extends Seeder
     {
         $user = User::query()->create([
             "name" => 'admin',
+            "ip" => '93.119.213.121',
             "email" => 'admin@gmail.com',
             "phonenumber" => '05681871489',
             "password" => bcrypt('password')
