@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container" style="background-color:gray">
+    <div class="container">
         <div class="titlebar">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
@@ -31,20 +31,21 @@
 
         </div>
         <hr>
+        <hr>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
             </div>
         @endif
         @foreach ($posts as $post)
-            <div class="row" style="background-color:bisque">
+            <div class="row" ">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-2">
                         </div>
 
                         <div>
-                            <h3 style="color:coral">{{ $post->title }}</h3>
+                            <h1>{{ $post->title }}</h1>
                         </div>
                     </div>
                     <div>
