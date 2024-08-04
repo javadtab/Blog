@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rules;
-use Stevebauman\Location\Facades\Location;
+//use Stevebauman\Location\Facades\Location;
 
 class AuthController extends Controller
 {
@@ -40,7 +40,7 @@ class AuthController extends Controller
     function profile(Request $request)
     {
         $ip = $request->ip;
-        $data = Location::get($ip);
+        $data = \Stevebauman\Location\Facades\Location::get($ip);
 
         $lat = $data->latitude;
         $long = $data->longitude;
