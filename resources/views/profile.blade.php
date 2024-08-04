@@ -93,7 +93,7 @@
         </tbody>
     </table>
     <hr>
-    <img style="display: block;margin: auto;background-color: hsl(0, 0%, 90%);"
+    <img style="margin: auto;background-color: hsl(0, 0%, 90%);"
         src="data:image/png;base64,{{ $map }}">
     <!--تبدیل کد باینری به عکس و نشان دادن اون 👆👆-->
     </div>
