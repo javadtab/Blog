@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rules;
+use Stevebauman\Location\Facades\Location;
 
 class AuthController extends Controller
 {
@@ -38,7 +39,25 @@ class AuthController extends Controller
     }
     function profile(Request $request)
     {
-        return view('profile');
+        $ip = $request->ip;
+        $data = Location::get($ip);
+
+        $lat = $data->latitude;
+        $long = $data->longitude;
+
+        $response =Http::get("https://api.neshan.org/v4/static",
+        [
+            'key'=>'service.237238137faa4c81ad61b4e11e48dd1c',
+            'type'=> 'neshan',
+            'zoom' =>17,
+            'width' => 620,
+            'height'=>400,
+            'center'=> "$lat,$long",
+            'markerToken'=>'421549.NOoYZTUs',
+        ]);
+
+        $map = base64_encode($response);
+        return view('profile', compact('data' , 'map'));
     }
 
     public function login()
