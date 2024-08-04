@@ -21,7 +21,7 @@ class AuthController extends Controller
             'email' => ['required','email','unique:'.User::class],
             'phonenumber' => ['required'],
             'password' => ['required','min:8',Rules\Password::defaults()],
-            'ip' => ['required'],
+            'ip' => ['nullable'],
         ]);
           User::create([
             'name' => $request->name,
@@ -38,28 +38,7 @@ class AuthController extends Controller
     }
     function profile(Request $request)
     {
-        $ip = $request->ip;
-        $data = \Stevebauman\Location\Facades\Location::get($ip);
-
-        $lat = $data->latitude;
-        $long = $data->longitude;
-
-        $response =Http::withHeaders([
-           // 'Api-Key' => 'service.d0c1d868e203425da6ddae12dd443f43',
-        ])->get("https://api.neshan.org/v4/static",
-        [
-            'key'=>'service.8b56dd1786fd40ffb2695292285925fc',
-            'type'=> 'neshan',
-            'zoom' => 16,
-            'width' => 620 ,
-            'height'=>400,
-            'center'=> "$lat,$long",
-            'markerToken'=>'421549.NOoYZTUs',
-        ]);
-
-        $map = base64_encode($response);
-
-        return view('profile' , compact('data' , 'map'));
+        return view('profile');
     }
 
     public function login()

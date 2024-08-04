@@ -49,24 +49,6 @@
         <h2>Email Adress :{{ Auth::user()->email }} </h2>
         <h2>PhoneNumber :{{ Auth::user()->phonenumber }} </h2>
         <div >
-            <img style="display: block;margin: auto;background-color: hsl(0, 0%, 90%);"
-
-            src="data:image/png;base64,{{ $map }}">
-            <!--تبدیل کد باینری به عکس و نشان دادن اون 👆👆-->
-           </div>
-           <hr>
-           <div>
-            <h3>IP: {{ $data->ip }}</h3>
-            <h3>Country Name: {{ $data->countryName }} </h3>
-            <h3>Country Code: {{ $data->countryCode }}</h3>
-            <h3>Region Code: {{ $data->regionCode }}</h3>
-            <h3>Region Name: {{ $data->regionName }}</h3>
-            <h3>City Name: {{ $data->cityName }}</h3>
-            <h3>Zipcode: {{ $data->zipCode }}</h3>
-            <h3>Latitude: {{ $data->latitude }}</h3>
-            <h3>Longitude: {{ $data->longitude }}</h3>
-
-       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
