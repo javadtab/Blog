@@ -42,7 +42,7 @@
             </div>
         </div>
     </nav>
-    <div class="container" style="margin: auto">
+    <div style="margin: auto">
         <h1 ><strong> Personal information :</strong></h1>
         <hr>
         <table class="table table-bordered">
