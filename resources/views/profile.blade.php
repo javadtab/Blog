@@ -67,7 +67,7 @@
         <tbody>
           <tr>
             <td>{{ Auth::user()->ip}}</td>
-            <td>{{ Auth::user()->ip()->countryName}}</td>
+            <td>{{ Auth::user()->countryName}}</td>
             <td>{{ $data->countryCode }}</td>
             <td>{{ $data->regionCode }}</td>
             <td>{{ $data->regionName }}</td>
