@@ -40,7 +40,7 @@ class AuthController extends Controller
     function profile(Request $request)
     {
         $ip = $request = 'ip' ;
-        $data = Location::get('ip');
+        $data = Location::get($ip);
 
         $lat = $data->latitude;
         $long = $data->longitude;
