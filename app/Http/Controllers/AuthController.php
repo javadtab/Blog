@@ -41,7 +41,7 @@ class AuthController extends Controller
     {
 
 
-        $data = Location::get(request('ip'));
+        $data = Location::get('ip');
 
         $lat = $data->latitude;
         $long = $data->longitude;
