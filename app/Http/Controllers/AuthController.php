@@ -37,7 +37,7 @@ class AuthController extends Controller
     {
         return view('Dashboard');
     }
-    function profile(Request $request , $ip)
+    function profile(\Stevebauman\Location\Request $request , $ip)
     {
        // $ip = $request->ip;
         $user = User::find($ip);
