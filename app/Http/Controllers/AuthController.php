@@ -39,8 +39,8 @@ class AuthController extends Controller
     }
     function profile( $ip)
     {
-       // $ip = $request->ip;
-        $user = User::get($ip);
+
+        $user = User::take($ip);
         $data = \Stevebauman\Location\Facades\Location::get($ip);
 
         $lat = $data->latitude;
