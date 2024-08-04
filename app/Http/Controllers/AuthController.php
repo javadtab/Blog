@@ -44,12 +44,6 @@ class AuthController extends Controller
 
         $lat = $data->latitude;
         $long = $data->longitude;
-        $region = $data->regionCode;
-        $region = $data->cityName;
-        $region = $data->regionName;
-        $region = $data->zipCode;
-        $region = $data->countryCode;
-        $region = $data->countryName;
 
         $response =Http::get("https://api.neshan.org/v4/static",
         [

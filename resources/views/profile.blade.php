@@ -42,10 +42,10 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <h1 tyle="text-align: left"><strong> Personal information :</strong></h1>
+    <div class="container" style="text-align: left">
+        <h1 ><strong> Personal information :</strong></h1>
         <hr>
-        <table class="table table-bordered" style="text-align: left">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
