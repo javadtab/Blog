@@ -21,7 +21,7 @@ class AuthController extends Controller
             'email' => ['required','email','unique:'.User::class],
             'phonenumber' => ['required'],
             'password' => ['required','min:8',Rules\Password::defaults()],
-            'ip' => ['nullable'],
+            'ip' => ['required'],
         ]);
           User::create([
             'name' => $request->name,
