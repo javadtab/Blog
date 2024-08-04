@@ -43,7 +43,7 @@
         </div>
     </nav>
     <div class="container">
-        <h1><strong> Personal information :</strong></h1>
+        <h1 tyle="text-align: left"><strong> Personal information :</strong></h1>
         <hr>
         <table class="table table-bordered" style="text-align: left">
             <thead>
