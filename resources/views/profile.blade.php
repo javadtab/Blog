@@ -45,7 +45,7 @@
     <div class="container">
         <h1><strong> Personal information :</strong></h1>
         <hr>
-        <table class="table table-bordered">
+        <table class="table table-bordered" style="text-align: left">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
