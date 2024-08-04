@@ -53,6 +53,7 @@
     <table class="table table-bordered">
         <thead>
           <tr>
+            <th scope="col">IP</th>
             <th scope="col">Country Name</th>
             <th scope="col">Country Code</th>
             <th scope="col">Region Code</th>
@@ -65,6 +66,7 @@
         </thead>
         <tbody>
           <tr>
+            <td>{{$data->ip}}</td>
             <td>{{$data->countryName}}</td>
             <td>{{ $data->countryCode }}</td>
             <td>{{ $data->regionCode }}</td>
