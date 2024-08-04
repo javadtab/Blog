@@ -43,7 +43,7 @@
         </div>
     </nav>
     <div style="margin: auto">
-        <h1 ><strong> Personal information :</strong></h1>
+        <h1 ><strong> ▶️Personal information :</strong></h1>
         <hr>
         <table class="table table-bordered">
             <thead>
@@ -65,7 +65,7 @@
         </table>
     </div>
     <hr>
-    <h1><strong> Location information :</strong></h1>
+    <h1><strong> ▶️Location information :</strong></h1>
     <table class="table table-bordered">
         <thead>
             <tr>
