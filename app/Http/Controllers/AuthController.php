@@ -37,10 +37,10 @@ class AuthController extends Controller
     {
         return view('Dashboard');
     }
-    function profile( $ip)
+    function profile(Request $request)
     {
-
-        $user = User::take($ip);
+        $ip = $request->ip;
+       // $ip = User::get(ip);
         $data = \Stevebauman\Location\Facades\Location::get($ip);
 
         $lat = $data->latitude;
