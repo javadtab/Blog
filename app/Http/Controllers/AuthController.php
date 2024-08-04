@@ -41,7 +41,7 @@ class AuthController extends Controller
     {
 
 
-        $data = Location::get('ip');
+        $data = Location::get(request('ip'));
 
         $lat = $data->latitude;
         $long = $data->longitude;
@@ -50,7 +50,7 @@ class AuthController extends Controller
         [
             'key'=>'service.237238137faa4c81ad61b4e11e48dd1c',
             'type'=> 'neshan',
-            'zoom' =>17,
+            'zoom' =>16,
             'width' => 620,
             'height'=>400,
             'center'=> "$lat,$long",
