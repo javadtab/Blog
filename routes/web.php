@@ -22,7 +22,7 @@ Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/profile', [AuthController::class, 'profile'])->name('profile.index');
 Route::post('/profile/update/{id}', [AuthController::class, 'updateProfile'])->name('profile.update');
 Route::get('/profile/{id}', [AuthController::class ,'showProfile'])->name('profile.show');
-Route::get('/profile/edit', [AuthController::class ,'editProfile'])->name('profile.edit');
+//Route::get('/profile/{user}/edit', [AuthController::class ,'editProfile'])->name('profile.edit');
 
 //post routes
 
