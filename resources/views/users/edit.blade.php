@@ -30,23 +30,6 @@
             </div>
         </nav>
     <div>
-        <h1 ><strong> ▶️Personal information :</strong></h1>
-        <hr>
-        <div class="card p-3" style="background-color:lightblue ">
-            <label for="floatingInput">Name</label>
-            <input class="form-control" value="{{ Auth::user()->name }}" type="text" name="name">
-            <label for="floatingTextArea">IP</label>
-            <input class="form-control" value=" {{ Auth::user()->ip }}" type="number" name="ip">
-            <label for="floatingInput">Email</label>
-            <input class="form-control" value="{{ Auth::user()->email }}" type="email" name="email" >
-            <label for="floatingInput">PhoneNumber</label>
-            <input class="form-control" value="{{ Auth::user()->phonenumber }}" type="number" name="phonenumber">
-            <label for="floatingInput">Password</label>
-            <input class="form-control" value="{{ Auth::user()->password }}" type="password" name="password">
-            <br>
-            <button type="submit" class="btn btn-success">submit</button>
-        </div>
-        <hr>
           <div>
                 <form method="post" action="/users/{{ $user->id }}">
 

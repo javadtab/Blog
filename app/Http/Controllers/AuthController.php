@@ -76,15 +76,14 @@ class AuthController extends Controller
         $map = base64_encode($response);
         return view('profile.index', compact('data' , 'map'));
     }
-    public function showProfile($id)
+    public function showProfile()
     {
-        $user = User::find($id);
-        return view('profile.index' , ['user' => $user]);
+        return view('profile.index');
     }
     public function editProfile($id)
     {
-        $user = User::findOrFail($id);
-        return view('profile.edit', compact('user'));
+        //$users = User::findOrFail($user);
+        return view('profile.edit');
     }
     public function  updateProfile(Request $request , $id)
     {
