@@ -23,10 +23,13 @@
                         <a class="nav-link" href="{{ route('dashboard') }}">Home Page</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('posts.create') }}">Create post</a>
+                        <a class="nav-link" href="{{ route('posts.create') }}">Create Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('posts.index') }}">Posts list</a>
+                        <a class="nav-link" href="{{ route('posts.index') }}">Posts List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('EditProfile') }}">Edit Profile</a>
                     </li>
                     @can('read user')
                         <li class="nav-item">

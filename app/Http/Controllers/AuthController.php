@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -37,7 +38,23 @@ class AuthController extends Controller
     {
         return view('Dashboard');
     }
-    function profile(Request $request)
+    public function login()
+    {
+        return view('login');
+    }
+    public function loginPost(Request $request)
+    {
+        $credetials = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+
+        if (Auth::attempt($credetials)) {
+            return redirect('/dashboard')->with('success','Login successfuly');
+        }
+        return back()->with('error', 'Email or Password incorrect');
+    }
+    public function profile(Request $request)
     {
         $ip = $request -> user()->ip ;
         $data = Location::get($ip);
@@ -59,23 +76,33 @@ class AuthController extends Controller
         $map = base64_encode($response);
         return view('profile', compact('data' , 'map'));
     }
-
-    public function login()
+    public function showProfile($id)
     {
-        return view('login');
+        $user = User::find($id);
+        return view('profile.index' , ['user' => $user]);
     }
-    public function loginPost(Request $request)
+    public function editProfile($id )
     {
-        $credetials = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
-
-        if (Auth::attempt($credetials)) {
-            return redirect('/dashboard')->with('success','Login successfuly');
-        }
-        return back()->with('error', 'Email or Password incorrect');
+        $user = User::findOrFail($id);
+        return view('profile.edit', compact('user'));
     }
+    public function  updateProfile(Request $request , $id)
+    {
+        $request->validate([
+            'name' => ['required'],
+            'email' => ['required','email','unique:'.User::class],
+            'phonenumber' => ['required'],
+            'password' => ['required','min:8',Rules\Password::defaults()],
+            'ip' => ['required'],
+        ]);
+
+
+        $user = User::find($id);
+        $user->update($request->all());
+
+        return redirect()->route('profile.index')->with('success' , 'success');
+    }
+
     public function logout()
     {
         Auth::logout();
