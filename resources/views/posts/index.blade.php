@@ -2,6 +2,7 @@
 @section('content')
     <div class="container">
         <div class="titlebar">
+ <!--navbar -->
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
@@ -28,7 +29,7 @@
                     </div>
                 </div>
             </nav>
-
+<!-- error part -->
         </div>
         <hr>
         <hr>
@@ -43,19 +44,18 @@
                     <div class="row">
                         <div class="col-2">
                         </div>
-
+<!-- post box(title,body,img ...) -->
                         <div>
                             <h1>{{ $post->title }}</h1>
                         </div>
                     </div>
                     <div>
                     <p>{{ $post->description }}</p>
-
                     </div>
                     <img class="img-fluid" style="max-width:100;" src="{{ $post->getFirstMediaUrl('images') }}"
                         /width="250px" alt="">
                     <br>
-
+<!--permision part for edit and delete post -->
                     @can('edit' , $post)
                         <a href="{{ url('/posts/' . $post->id . '/edit') }}" class="btn btn-success" role="button">Edit</a>
                     @endcan
@@ -68,8 +68,7 @@
                         </form>
                     @endcan
                     <h6 class="float-end">Written By:{{ $post->user->name }}</h6>
-
-
+<!--comment part -->
                     <h4>Comments</h4>
                     @include('posts.comments', ['comments' => $post->comments, 'post_id' => $post->id])
                     <hr />
