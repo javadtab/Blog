@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -24,6 +25,11 @@ Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/profile/update/{user}' ,[AuthController::class, 'updateProfile'])->name('profile.update');
 Route::get('/profile/{user}', [AuthController::class, 'showProfile'])->name('profile.show');
 Route::get('/profile/{user}/edit' , [AuthController::class, 'editProfile'])->name('profile.edit');
+
+#comments route
+
+Route::post('/posts/comments' , [CommentController::class , 'store'])->name('comments.store');
+
 #post routes
 
 Route::get('/posts', [PostController::class ,'index'])->name('posts.index');

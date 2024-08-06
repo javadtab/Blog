@@ -50,12 +50,28 @@
                     </div>
                     <div>
                     <p>{{ $post->description }}</p>
+
                     </div>
                     <img class="img-fluid" style="max-width:100;" src="{{ $post->getFirstMediaUrl('images') }}"
                         /width="1000px" alt="">
                     <br>
                     <h6 class="float-end">Written By:{{ $post->user->name }}</h6>
-                    <h6 class="float-end">{{ $post->created_at }}</h6>
+
+                    <hr />
+                    <h4>Display Comments</h4>
+                    @include('posts.comments', ['comments' => $post->comments, 'post_id' => $post->id])
+                    <hr />
+                    <h4>Add comment</h4>
+                    <form method="post" action="{{ route('comments.store')}}">
+                    @csrf
+                   <div class="form-group">
+                   <textarea class="form-control" name="body"></textarea>
+                   <input type="hidden" name="post_id" value="{{ $post->id }}" />
+                   </div>
+                   <div class="form-group">
+                   <input type="submit" class="btn btn-success" value="Add Comment" />
+                   </div>
+
                     @can('edit' , $post)
                         <a href="{{ url('/posts/' . $post->id . '/edit') }}" class="btn btn-success" role="button">Edit</a>
                     @endcan
