@@ -1,9 +1,35 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <h1>Add Post</h1>
         <section class="mt-3">
             <form method="post" action="{{ route('posts.store') }}" enctype="multipart/form-data">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <h1>Add Post</h1>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('posts.index') }}">Posts list</a>
+                                </li>
+                            </ul>
+                            <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
+                                @csrf
+                                @method ('Delete')
+                                <button type="submit" class="btn btn-danger">Logout</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+                <hr>
                 @csrf
                 @if ($errors->any())
                     <div class="alert alert-danger">
