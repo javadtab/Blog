@@ -30,7 +30,7 @@
                         <a class="nav-link" href="{{ route('posts.index') }}">Posts List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profile/edit')  }}">Edit Profile</a>-->
+                        <a class="nav-link" href="{{ url('/profile/' . Auth::user()->id . '/edit') }}">Edit Profile</a>
                     </li>
                     @can('read user')
                         <li class="nav-item">

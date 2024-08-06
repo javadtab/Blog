@@ -74,7 +74,7 @@ class AuthController extends Controller
         ]);
 
         $map = base64_encode($response);
-        return view('profile', compact('data' , 'map'));
+        return view('profile.index', compact('data' , 'map'));
     }
     public function showProfile($id)
     {

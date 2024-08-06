@@ -1,9 +1,25 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        <title>Edit Profile</title>
         <h1>Edit Profile</h1>
         <section class="mt-3">
             <form method="post" action="/profile/update/{{ $user->id }}" enctype="multipart/form-data">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('posts.create') }}">Add Post</a>
+                        </li>
+                    </ul>
+                    <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
+                        @csrf
+                        @method ('Delete')
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                </div>
                 @csrf
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -24,9 +40,9 @@
                     <label for="floatingInput">Email</label>
                     <input class="form-control" value="{{Auth::user()->email }}" type="email" name="email">
                     <label for="floatingInput">PhoneNumber</label>
-                    <input class="form-control" value="{{Auth::user()->phonenumber}}" type="number" name="phonenumber">
+                    <input class="form-control" value="{{Auth::user()->phonenumber}}" type="text" name="phonenumber">
                     <label for="floatingInput">Password</label>
-                    <input class="form-control" value="{{Auth::user()->password}}" type="number" name="password">
+                    <input class="form-control" value="{{Auth::user()->password}}" type="text" name="password">
                     <br>
                     <button type="submit" class="btn btn-success">submit</button>
                 </div>

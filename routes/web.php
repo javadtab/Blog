@@ -9,7 +9,9 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+
 // Auth routes
+
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerPost'])->name('register');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -19,10 +21,9 @@ Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard'
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //profile routes
-
-Route::get('/profile/{id}', [AuthController::class, 'showProfile'])->name('profile.show');
-Route::get('/profile/{id}/edit' , [AuthController::class, 'editProfile'])->name('profile.edit');
-Route::post('/profile/{id}' ,[AuthController::class, 'updateProfile'])->name('profile.update');
+Route::post('/profile/update/{user}' ,[AuthController::class, 'updateProfile'])->name('profile.update');
+Route::get('/profile/{user}', [AuthController::class, 'showProfile'])->name('profile.show');
+Route::get('/profile/{user}/edit' , [AuthController::class, 'editProfile'])->name('profile.edit');
 //post routes
 
 Route::get('/posts', [PostController::class ,'index'])->name('posts.index');
