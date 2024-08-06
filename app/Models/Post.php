@@ -8,11 +8,9 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Usamamuneerchaudhary\Commentify\Traits\Commentable;
-use Usamamuneerchaudhary\Commentify\Traits\HasUserAvatar;
 class Post extends Model implements HasMedia
 {
-    use HasFactory , InteractsWithMedia , Commentable ;
+    use HasFactory , InteractsWithMedia;
 
     protected $table = 'posts';
     protected $fillable = [
@@ -25,5 +23,10 @@ class Post extends Model implements HasMedia
     public function user()
     {
        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function comments()
+    {
+       return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
 }
