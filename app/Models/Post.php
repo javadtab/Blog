@@ -8,10 +8,11 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-
+use Usamamuneerchaudhary\Commentify\Traits\Commentable;
+use Usamamuneerchaudhary\Commentify\Traits\HasUserAvatar;
 class Post extends Model implements HasMedia
 {
-    use HasFactory , InteractsWithMedia ;
+    use HasFactory , InteractsWithMedia , Commentable ;
 
     protected $table = 'posts';
     protected $fillable = [
