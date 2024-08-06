@@ -19,7 +19,7 @@
             </button>
     </nav>
     <div class="container">
-        <h1><strong>Home Page</strong></h1>
+        <h1><strong>Home Page :</strong></h1>
         <hr>
         <a  href="{{ route('posts.index') }}">Posts list</a>
         <hr>

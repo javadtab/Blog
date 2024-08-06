@@ -14,13 +14,15 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerPost'])->name('register');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
+Route::get('/profile', [AuthController::class, 'profile'])->name('profile.index');
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //profile routes
 
-Route::get('/profile', [AuthController::class, 'profile'])->name('profile.index');
-
+Route::get('/profile/{id}', [AuthController::class, 'showProfile'])->name('profile.show');
+Route::get('/profile/{id}/edit' , [AuthController::class, 'editProfile'])->name('profile.edit');
+Route::post('/profile/{id}' ,[AuthController::class, 'updateProfile'])->name('profile.update');
 //post routes
 
 Route::get('/posts', [PostController::class ,'index'])->name('posts.index');

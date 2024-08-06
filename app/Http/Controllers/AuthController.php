@@ -74,16 +74,17 @@ class AuthController extends Controller
         ]);
 
         $map = base64_encode($response);
-        return view('profile.index', compact('data' , 'map'));
+        return view('profile', compact('data' , 'map'));
     }
-    public function showProfile()
+    public function showProfile($id)
     {
-        return view('profile.index');
+        $user = User::findOrFail($id);
+        return view('profile.index' ,compact('user'));
     }
     public function editProfile($id)
     {
-        //$users = User::findOrFail($user);
-        return view('profile.edit');
+        $user = User::findOrFail($id);
+        return view('profile.edit' ,compact('user'));
     }
     public function  updateProfile(Request $request , $id)
     {
@@ -99,7 +100,7 @@ class AuthController extends Controller
         $user = User::find($id);
         $user->update($request->all());
 
-        return redirect()->route('profile.index')->with('success' , 'success');
+        return redirect()->route('profile.index', $user->id )->with('success' , 'success');
     }
 
     public function logout()
