@@ -52,7 +52,7 @@
                     <div>
                     <p>{{ $post->description }}</p>
                     </div>
-                    <img class="img-fluid" style="max-width:100;" src="{{ $post->getFirstMediaUrl('images') }}"
+                    <img class="img-fluid" style="border-color: red" src="{{ $post->getFirstMediaUrl('images') }}"
                         /width="250px" alt="">
                     <br>
 <!--permision part for edit and delete post -->
