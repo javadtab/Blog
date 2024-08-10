@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -12,7 +11,7 @@ use Stevebauman\Location\Facades\Location;
 
 class AuthController extends Controller
 {
-    function register(){
+    public function register(){
         return view('register');
     }
 
@@ -34,7 +33,7 @@ class AuthController extends Controller
         ]);
          return redirect()->route('login');
     }
-    function dashboard()
+    public function dashboard()
     {
         return view('Dashboard');
     }

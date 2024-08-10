@@ -68,7 +68,8 @@
                         </form>
                     @endcan
                     <h6 class="float-end">Written By:{{ $post->user->name }}</h6>
-<!--comment part -->
+                    <hr>
+ <!--comment part -->
                     <h4>Comments</h4>
                     @include('posts.comments', ['comments' => $post->comments, 'post_id' => $post->id])
                     <hr />
