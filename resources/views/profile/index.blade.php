@@ -118,7 +118,7 @@
     const map = new L.map("map", {
         key: "web.611a004ba12a434ebcaf3bcb33d19ce8",
         maptype: "neshan",
-        zoom : 12,
+        zoom : 14.5,
         width : 620,
         height : 400,
         center: [{{ $data->latitude }},{{ $data->longitude }}],
