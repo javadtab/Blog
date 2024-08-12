@@ -96,8 +96,45 @@
             </tr>
         </tbody>
     </table>
-        <img style="display:block  ;margin: auto;background-color: hsl(0, 0%, 90%);"
-        src="data:image/png;base64,{{ $map }}">
+    <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/v1.9.4/neshan-sdk/v1.0.8/index.css"/>
+    <script src="https://static.neshan.org/sdk/leaflet/v1.9.4/neshan-sdk/v1.0.8/index.js"></script>
+
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+        }
+
+        #map {
+            height: 50%;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    const map = new L.map("map", {
+        key: "web.611a004ba12a434ebcaf3bcb33d19ce8",
+        maptype: "neshan",
+        zoom : 12,
+        width : 620,
+        height : 400,
+        center: [{{ $data->latitude }},{{ $data->longitude }}],
+        markerToken : "261142.bobkxMMW",
+    });
+   // var marker = L.marker([{{ $data->latitude }},{{ $data->longitude }}]).addTo(map);
+
+    var circle = L.circle([{{ $data->latitude }},{{ $data->longitude }}], {
+    color: 'black',
+    fillColor: '#f04',
+    fillOpacity: 0.5,
+    radius: 300
+}).addTo(map);
+</script>
+    <!--   <img style="display:block  ;margin: auto;background-color: hsl(0, 0%, 90%);"
+    <!-- src="data:image/png;base64,{{ $map }}">
     <!--تبدیل کد باینری به عکس و نشان دادن اون 👆👆-->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

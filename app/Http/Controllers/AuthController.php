@@ -63,7 +63,7 @@ class AuthController extends Controller
 
         $response =Http::get("https://api.neshan.org/v4/static",
         [
-            'key'=>'service.d0c1d868e203425da6ddae12dd443f43',
+            'key'=>'web.611a004ba12a434ebcaf3bcb33d19ce8',
             'type'=> 'neshan',
             'zoom' =>16,
             'width' => 620,
