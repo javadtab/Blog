@@ -88,18 +88,14 @@ class AuthController extends Controller
     public function  updateProfile(Request $request , $id)
     {
         $request->validate([
-            'name' => ['required'],
-            'email' => ['required','email','unique:'.User::class],
-            'phonenumber' => ['required'],
             'password' => ['required','min:8',Rules\Password::defaults()],
-            'ip' => ['required'],
         ]);
 
 
         $user = User::find($id);
         $user->update($request->all());
 
-        return redirect()->route('profile.index', $user->id )->with('success' , 'success');
+        return redirect()->route('profile.index')->with('success' , 'success');
     }
 
     public function logout()

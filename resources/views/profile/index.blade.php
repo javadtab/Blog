@@ -124,7 +124,7 @@
         center: [{{ $data->latitude }},{{ $data->longitude }}],
         markerToken : "261142.bobkxMMW",
     });
-   // var marker = L.marker([{{ $data->latitude }},{{ $data->longitude }}]).addTo(map);
+    var marker = L.marker([{{ $data->latitude }},{{ $data->longitude }}]).addTo(map);
 
     var circle = L.circle([{{ $data->latitude }},{{ $data->longitude }}], {
     color: 'black',
