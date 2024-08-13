@@ -3,7 +3,6 @@
     <div class="container">
         <title>Edit Profile</title>
         <section class="mt-3">
-            <form method="post" action="/profile/update/{{ $user->id }}" enctype="multipart/form-data">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
@@ -31,6 +30,7 @@
                     </div>
                 </nav>
                 <hr>
+                <form method="post" action="/profile/update/{{ $user->id }}" enctype="multipart/form-data">
                 @csrf
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -47,8 +47,8 @@
                     <label for="floatingInput">Password</label>
                     <input class="form-control" value="{{Auth::user()->password}}" type="text" name="password">
                     <br>
-                    <button type="submit" class="btn btn-success">submit</button>
                 </div>
+                    <button class="btn btn-success">submit</button>
 
             </form>
         </section>

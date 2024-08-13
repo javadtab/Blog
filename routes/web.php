@@ -45,3 +45,4 @@ Route::delete('/posts/{post}/delete', [PostController::class, 'destroy']);
 Route::get('/users' , [UserController::class , 'index'])->name('users');
 Route::get('/users/{user}/edit' , [UserController::class ,'edit']);
 Route::patch('/users/{user}' , [UserController::class , 'update']);
+Route::delete('/users/{user}/delete', [UserController::class, 'destroy']);
