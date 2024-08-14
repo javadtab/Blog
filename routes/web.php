@@ -12,7 +12,6 @@ Route::get('/', function () {
 })->name('welcome');
 
 # Auth routes
-
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerPost'])->name('register');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -27,11 +26,9 @@ Route::get('/profile/{user}', [AuthController::class, 'showProfile'])->name('pro
 Route::get('/profile/{user}/edit' , [AuthController::class, 'editProfile'])->name('profile.edit');
 
 #comments route
-
 Route::post('/posts/comments' , [CommentController::class , 'store'])->name('comments.store');
 
 #post routes
-
 Route::get('/posts', [PostController::class ,'index'])->name('posts.index');
 Route::get('/posts/create', [PostController::class , 'create'])->name('posts.create');
 Route::post('/posts', [PostController::class ,'store'])->name('posts.store');
@@ -41,7 +38,6 @@ Route::get('/posts/{post}/edit',[ PostController::class ,'edit'])->name('posts.e
 Route::delete('/posts/{post}/delete', [PostController::class, 'destroy']);
 
 #users routes
-
 Route::get('/users' , [UserController::class , 'index'])->name('users');
 Route::post('/users/updatePermision/{user}' , [UserController::class , 'updatePermision']);
 Route::post('/users/update/{user}' , [UserController::class , 'update']);
