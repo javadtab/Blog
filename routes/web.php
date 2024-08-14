@@ -43,6 +43,9 @@ Route::delete('/posts/{post}/delete', [PostController::class, 'destroy']);
 #users routes
 
 Route::get('/users' , [UserController::class , 'index'])->name('users');
-Route::get('/users/{user}/edit' , [UserController::class ,'edit']);
-Route::patch('/users/{user}' , [UserController::class , 'update']);
+Route::post('/users/updatePermision/{user}' , [UserController::class , 'updatePermision']);
+Route::post('/users/update/{user}' , [UserController::class , 'update']);
+Route::get('/users/{user}', [UserController::class ,'show']);
+Route::get('/users.admin/{user}/edit' , [UserController::class ,'edit']);
+Route::get('/users/{user}/permision' , [UserController::class ,'permision']);
 Route::delete('/users/{user}/delete', [UserController::class, 'destroy']);
