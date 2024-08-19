@@ -3,23 +3,23 @@
 namespace Modules\Auth\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Auth;
 use Hash;
 use Http;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Users\App\Models\User;
 use Password;
 use Stevebauman\Location\Facades\Location;
 
 class AuthController extends Controller
 {
     public function welcome(){
-        return view('welcome');
+        return view('auth::welcome');
     }
     public function register(){
-        return view('register');
+        return view('auth::register');
     }
 
     public function registerPost(Request $request)
@@ -28,7 +28,7 @@ class AuthController extends Controller
             'name' => ['required'],
             'email' => ['required','email','unique:'.User::class],
             'phonenumber' => ['required'],
-            'password' => ['required','min:8',Password::defaults()],
+            'password' => ['required','min:8',\Illuminate\Validation\Rules\Password::defaults()],
             'ip' => ['required'],
         ]);
           User::create([
@@ -42,11 +42,11 @@ class AuthController extends Controller
     }
     public function dashboard()
     {
-        return view('Dashboard');
+        return view('auth::Dashboard');
     }
     public function login()
     {
-        return view('login');
+        return view('auth::login');
     }
     public function loginPost(Request $request)
     {
@@ -80,22 +80,22 @@ class AuthController extends Controller
         ]);
 
         $map = base64_encode($response);
-        return view('profile.index', compact('data' , 'map'));
+        return view('auth::profile.index', compact('data' , 'map'));
     }
     public function showProfile($id)
     {
         $user = User::findOrFail($id);
-        return view('profile.index' ,compact('user'));
+        return view('auth::profile.index' ,compact('user'));
     }
     public function editProfile($id)
     {
         $user = User::findOrFail($id);
-        return view('profile.edit' ,compact('user'));
+        return view('auth::profile.edit' ,compact('user'));
     }
     public function  updateProfile(Request $request , $id)
     {
         $request->validate([
-            'password' => ['required','min:8',Password::defaults()],
+            'password' => ['required','min:8',\Illuminate\Validation\Rules\Password::defaults()],
         ]);
 
 

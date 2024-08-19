@@ -6,23 +6,24 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Post\App\Models\Post;
 /////
 use Illuminate\Support\Facades\Gate;
 use Stevebauman\Location\Facades\Location;
 //use Illuminate\Http\Request;
-use App\Models\Post;
+//use App\Models\Post;
 use Illuminate\Auth\Access\HandlesAuthorization;
 class PostController extends Controller
 {
     public function index()
     {
         $posts = Post::orderBy('created_at', 'ASC')->get();
-        return view('index',compact('posts'));
+        return view('post::index',compact('posts'));
     }
 
     public function create()
     {
-        return view('create');
+        return view('post::create');
     }
 
     public function store(Request $request)
@@ -50,13 +51,13 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('index' , ['post' => $post]);
+        return view('post::index' , ['post' => $post]);
     }
 
     public function edit($id )
     {
         $post = Post::findOrFail($id);
-        return view('edit', compact('post'));
+        return view('post::edit', compact('post'));
     }
 
     public function update(Request $request ,  $id)

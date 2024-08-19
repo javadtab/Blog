@@ -7,7 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 //////
-use App\Models\Comment;
+use Modules\Post\App\Models\Comment;
 //use Illuminate\Http\Request;
 
 class CommentController extends Controller

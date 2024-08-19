@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\CommentController;
+
 use Illuminate\Support\Facades\Route;
 use Modules\Post\App\Http\Controllers\PostController;
-
+use Modules\Post\App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

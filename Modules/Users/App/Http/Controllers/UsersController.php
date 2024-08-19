@@ -6,15 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Models\User;
 use Illuminate\Validation\Rules;
+use Modules\Users\App\Models\User;
 use Spatie\Permission\Models\Permission;
 use Stevebauman\Location\Facades\Location;
 class UsersController extends Controller
 {
     public function index()
     {
-        return view('users.index',[
+        return view('users::index',[
             'users' => User::all()
         ]);
     }
@@ -23,12 +23,12 @@ class UsersController extends Controller
         $user = User::find($id);
         $ip = $request -> user()->ip ;
         $data = Location::get($ip);
-        return view('users.view' ,compact('data') ,['user' => $user]);
+        return view('users::view' ,compact('data') ,['user' => $user]);
     }
 
     public function permision(User $user)
     {
-        return view('users.permision' , [
+        return view('users::permision' , [
             'user' => $user,
             'permissions' => Permission::all()
         ]);
@@ -36,7 +36,7 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('users.edit' ,compact('user'));
+        return view('users::edit' ,compact('user'));
     }
     public function update(Request $request , $id)
     {

@@ -14,10 +14,10 @@ use Modules\Users\App\Http\Controllers\UsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/users' , [UserController::class , 'index'])->name('users');
-Route::post('/users/updatePermision/{user}' , [UserController::class , 'updatePermision']);
-Route::post('/users/update/{user}' , [UserController::class , 'update']);
-Route::get('/users/{user}', [UserController::class ,'show']);
-Route::get('/users.admin/{user}/edit' , [UserController::class ,'edit']);
-Route::get('/users/{user}/permision' , [UserController::class ,'permision']);
-Route::delete('/users/{user}/delete', [UserController::class, 'destroy']);
+Route::get('/users' , [UsersController::class , 'index'])->name('users');
+Route::post('/users/updatePermision/{user}' , [UsersController::class , 'updatePermision']);
+Route::post('/users/update/{user}' , [UsersController::class , 'update']);
+Route::get('/users/{user}', [UsersController::class ,'show']);
+Route::get('/users.admin/{user}/edit' , [UsersController::class ,'edit']);
+Route::get('/users/{user}/permision' , [UsersController::class ,'permision']);
+Route::delete('/users/{user}/delete', [UsersController::class, 'destroy']);

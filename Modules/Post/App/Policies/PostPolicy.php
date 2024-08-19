@@ -4,9 +4,9 @@ namespace Modules\Post\App\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 //////
-use App\Models\User;
-use App\Models\Post;
 use Illuminate\Auth\Access\Response;
+use Modules\Post\App\Models\Post;
+use Modules\Users\App\Models\User;
 
 class PostPolicy
 {

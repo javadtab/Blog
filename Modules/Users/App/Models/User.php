@@ -2,9 +2,9 @@
 
 namespace Modules\Users\App\Models;
 
-use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Post\App\Models\Post;
 use Modules\Users\Database\factories\UserFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
