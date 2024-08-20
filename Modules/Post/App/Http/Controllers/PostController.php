@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Modules\Post\App\Models\Post;
+//use Modules\Post\App\Models\Post;
 /////
 use Illuminate\Support\Facades\Gate;
 use Stevebauman\Location\Facades\Location;
 //use Illuminate\Http\Request;
-//use App\Models\Post;
+use App\Models\Post;
 use Illuminate\Auth\Access\HandlesAuthorization;
 class PostController extends Controller
 {
@@ -50,7 +50,7 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
         return view('post::index' , ['post' => $post]);
     }
 
