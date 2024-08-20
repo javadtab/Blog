@@ -12,7 +12,7 @@
         "laravel/tinker": "^2.9",
         "nwidart/laravel-modules": "^10.0",
         "spatie/laravel-medialibrary": "^11.4",
-        "spatie/laravel-permission": "^6.7",
+        "spatie/laravel-permission": "^6.9",
         "stevebauman/location": "^7.3",
         "stevebauman/purify": "^6.2",
         "usamamuneerchaudhary/commentify": "^1.5"

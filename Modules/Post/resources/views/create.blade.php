@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <section class="mt-3">
-            <form method="post" action="{{ route('posts.store') }}" enctype="multipart/form-data">
+            <form method="post" action="/posts" enctype="multipart/form-data">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
@@ -21,7 +21,7 @@
                                     <a class="nav-link" href="{{ route('posts.index') }}">Posts list</a>
                                 </li>
                             </ul>
-                            <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
+                            <form action="{{ route('logout') }}" method="post" class="d-flex" role="search">
                                 @csrf
                                 @method ('Delete')
                                 <button type="submit" class="btn btn-danger">Logout</button>
@@ -40,12 +40,13 @@
                         </ul>
                     </div>
                 @endif
+                @csrf
                 <div class="card p-5">
-                    <label >Title</label>
+                    <label>Title</label>
                     <input class="form-control" type="text" name="title">
-                    <label >Description</label>
-                    <textarea class="form-control" name="description"rows="20"></textarea>
-                    <label >Add Image</label>
+                    <label>Description</label>
+                    <textarea class="form-control" type="text" name="description"rows="10"></textarea>
+                    <label>Add Image</label>
                     <input class="form-control" type="file" name="image">
                 </div>
                 <button class="btn btn-secondary m-3">Save</button>
