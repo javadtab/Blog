@@ -20,7 +20,7 @@ Route::post('/posts', [PostController::class ,'store'])->name('posts.store');
 Route::post('/posts/update/{post}', [PostController::class ,'update'])->name('posts.update');
 Route::get('/posts/{post}', [PostController::class ,'show'])->name('posts.show');
 Route::get('/posts/{post}/edit',[ PostController::class ,'edit'])->name('posts.edit');
-Route::delete('/posts/{post}/delete', [PostController::class, 'destroy']);
+Route::delete('/posts/{post}', [PostController::class, 'destroy']);
 
 #comments route
 Route::post('/posts/comments' , [CommentController::class , 'store'])->name('comments.store');

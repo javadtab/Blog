@@ -8,11 +8,11 @@ use Modules\Users\App\Models\User;
 
 class PostPolicy
 {
-    public function edit(User $user , Post $post)
+    public function edit(\App\Models\User $user , \App\Models\Post $post)
     {
         return $user->id === $post->user_id;
     }
-    public function destroy(User $user , Post $post)
+    public function destroy(\App\Models\User $user , \App\Models\Post $post)
     {
         return $user->id === $post->user_id;
     }

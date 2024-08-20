@@ -6,11 +6,8 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Hash;
 use Http;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Modules\Users\App\Models\User;
-use Password;
 use Stevebauman\Location\Facades\Location;
 
 class AuthController extends Controller
