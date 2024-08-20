@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('post::layouts.app')
 @section('content')
     <div class="container">
         <section class="mt-3">
