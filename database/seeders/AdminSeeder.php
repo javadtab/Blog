@@ -11,7 +11,7 @@ class AdminSeeder extends Seeder
 {
     public function run(): void
     {
-        $user = \Illuminate\Foundation\Auth\User::query()->create([
+        $user = User::query()->create([
             "name" => 'admin',
             "ip" => '93.119.213.121',
             "email" => 'admin@gmail.com',
