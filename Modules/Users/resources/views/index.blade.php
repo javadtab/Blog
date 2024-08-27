@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('users::layouts.app')
 @section('content')
     <div class="container">
         <div class="titlebar">
@@ -15,6 +15,9 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link btn-dark" href="{{ route('dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-dark" href="{{ route('role') }}">Role</a>
                             </li>
                         </ul>
                         <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
@@ -45,8 +48,8 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td><a href="{{ url('/users/' . $user->id ) }}" class="btn btn-primary"
-                                        role="button">View</a>
+                                    <td><a href="{{ url('/users/' . $user->id) }}" class="btn btn-primary"
+                                            role="button">View</a>
                                     </td>
                                     <td><a href="{{ url('/users/' . $user->id . '/permision') }}" class="btn btn-warning"
                                             role="button">Permisions</a>
@@ -55,12 +58,13 @@
                                             role="button">Edit Pass</a>
                                     </td>
                                     @can('delete user')
-                                     <td><form method="POST" action="{{ url('/users/' . $user->id . '/delete') }}">
-                                            @method('Delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
-                                     </td>
+                                        <td>
+                                            <form method="POST" action="{{ url('/users/' . $user->id . '/delete') }}">
+                                                @method('Delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
                                     @endcan
                                     </td>
                                 </tr>

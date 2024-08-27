@@ -20,12 +20,10 @@ class permissionSeeder extends Seeder
             'update user',
             'delete user'
         ];
+       $permission = collect($permissions)->map(function ($permission) {
+           return ['name' => $permission, 'guard_name' =>'guard'];
+       });
 
-
-        $permission = collect($permissions)->map(function ($permission) {
-            return ['name' => $permission, 'guard_name' =>'web'];
-        });
-
-        Permission::insert($permission->toArray());
+       Permission::insert($permission->toArray());
     }
 }

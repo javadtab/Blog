@@ -19,7 +19,9 @@ class AdminSeeder extends Seeder
             "password" => bcrypt('password')
         ]);
 
-        $user->assignRole('admin');
+        $permission = Permission::query()->pluck('name')->toArray();
+
+        $user->givePermissionTo($permission);
 
     }
 

@@ -25,6 +25,9 @@
         <hr>
         <a  href="{{ route('posts.create') }}">Create post</a>
         <hr>
+        @role('admin')
+        <a  href= "{{ route('users')}}">Users</a>
+        @endrole
         @can('read user')
          <a  href= "{{ route('users')}}">Users</a>
         @endcan

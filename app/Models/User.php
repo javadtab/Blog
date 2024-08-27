@@ -25,7 +25,7 @@ class User extends  Authenticatable
         'phonenumber',
         'password',
     ];
-
+    protected $guard_name = 'web';
 
     protected $hidden = [
         'password',
