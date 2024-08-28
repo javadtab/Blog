@@ -22,9 +22,9 @@ class WriterSeeder extends Seeder
             "password" => bcrypt('password')
         ]);
 
-        $permission = Permission::query()->pluck('name')->toArray();
+        Permission::query()->pluck('name')->toArray();
 
-        $writer->givePermissionTo($permission);
+        $writer->givePermissionTo(['create post','read post','edit post']);
 
         $writer->assignRole('writer');
     }

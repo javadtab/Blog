@@ -23,14 +23,10 @@
         <hr>
         <a  href="{{ route('posts.index') }}">Posts list</a>
         <hr>
-        @role('admin')
+        @can('create post')
         <a  href="{{ route('posts.create') }}">Create post</a>
         <hr>
-        @endrole
-        @role('writer')
-        <a  href="{{ route('posts.create') }}">Create post</a>
-        <hr>
-        @endrole
+        @endcan
         @role('admin')
         <a  href= "{{ route('users')}}">Users</a>
         <hr>

@@ -23,20 +23,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('dashboard') }}">Home Page</a>
                     </li>
+                    @can('create post')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('posts.create') }}">Create Post</a>
                     </li>
+                    @endcan
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('posts.index') }}">Posts List</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/profile/' . Auth::user()->id . '/edit') }}">Edit Profile</a>
                     </li>
-                    @can('read user')
+                    @role('admin')
                         <li class="nav-item">
                             <a class= "nav-link" href= "/users">Users</a>
                         </li>
-                    @endcan
+                   @endrole
                 </ul>
                 <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
                     @csrf

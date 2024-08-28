@@ -18,11 +18,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
+                        @can('create post')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts.create') }}">Add Post</a>
                         </li>
+                        @endcan
                     </ul>
-
                 </div>
             </div>
         </nav>

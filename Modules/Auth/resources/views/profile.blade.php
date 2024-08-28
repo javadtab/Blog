@@ -21,13 +21,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard') }}">Home Page</a>
+                        <a class="nav-link" href="{{ route('dashboard') }}">Homee Page</a>
                     </li>
-                    @can('create post')
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/posts/create') }}">Create Post</a>
-                    </li>
-                    @endcan
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('posts.index') }}">Posts List</a>
                     </li>
