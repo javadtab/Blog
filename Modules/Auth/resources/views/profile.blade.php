@@ -23,14 +23,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('dashboard') }}">Home Page</a>
                     </li>
+                    @can('create post')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('posts.create') }}">Create Post</a>
+                        <a class="nav-link" href="{{ url('/posts/create') }}">Create Post</a>
                     </li>
+                    @endcan
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('posts.index') }}">Posts List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profile/edit')  }}">Edit Profile</a>
+                        <a class="nav-link" href="{{ url('/profile/edit') }}">Edit Profile</a>
                     </li>
                     @can('read user')
                         <li class="nav-item">
@@ -47,7 +49,7 @@
         </div>
     </nav>
     <div style="margin: auto">
-        <h1 ><strong> ▶️Personal information :</strong></h1>
+        <h1><strong> ▶️Personal information :</strong></h1>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -62,7 +64,7 @@
                     <td>{{ Auth::user()->name }}</td>
                     <td>{{ Auth::user()->ip }}</td>
                     <td>{{ Auth::user()->email }}</td>
-                    <td>{{ Auth::user()->phonenumber}}</td>
+                    <td>{{ Auth::user()->phonenumber }}</td>
                 </tr>
             </tbody>
         </table>
@@ -96,7 +98,7 @@
             </tr>
         </tbody>
     </table>
-        <img style="display:block  ;margin: auto;background-color: hsl(0, 0%, 90%);"
+    <img style="display:block  ;margin: auto;background-color: hsl(0, 0%, 90%);"
         src="data:image/png;base64,{{ $map }}">
     <!--تبدیل کد باینری به عکس و نشان دادن اون 👆👆-->
     </div>
