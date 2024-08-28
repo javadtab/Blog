@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
-use Spatie\Permission\PermissionRegistrar;
 
 class permissionSeeder extends Seeder
 {
@@ -21,7 +19,7 @@ class permissionSeeder extends Seeder
             'delete user'
         ];
        $permission = collect($permissions)->map(function ($permission) {
-           return ['name' => $permission, 'guard_name' =>'guard'];
+           return ['name' => $permission , 'guard_name' => 'web'];
        });
 
        Permission::insert($permission->toArray());

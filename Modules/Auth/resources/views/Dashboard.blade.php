@@ -23,15 +23,18 @@
         <hr>
         <a  href="{{ route('posts.index') }}">Posts list</a>
         <hr>
+        @role('admin')
         <a  href="{{ route('posts.create') }}">Create post</a>
         <hr>
+        @endrole
+        @role('writer')
+        <a  href="{{ route('posts.create') }}">Create post</a>
+        <hr>
+        @endrole
         @role('admin')
         <a  href= "{{ route('users')}}">Users</a>
-        @endrole
-        @can('read user')
-         <a  href= "{{ route('users')}}">Users</a>
-        @endcan
         <hr>
+        @endrole
         <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
             @csrf
             @method ('Delete')

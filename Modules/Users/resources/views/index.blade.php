@@ -39,7 +39,6 @@
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
-                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,11 +48,11 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td><a href="{{ url('/users/' . $user->id) }}" class="btn btn-primary"
-                                            role="button">View</a>
+                                            role="button">Profile</a>
                                     </td>
-                                    <td><a href="{{ url('/users/' . $user->id . '/permision') }}" class="btn btn-warning"
+                                   <!-- <td><a href="{{ url('/users/' . $user->id . '/permision') }}" class="btn btn-warning"
                                             role="button">Permisions</a>
-                                    </td>
+                                    </td> -->
                                     <td><a href="{{ url('/users.admin/' . $user->id . '/edit') }}" class="btn btn-success"
                                             role="button">Edit Pass</a>
                                     </td>

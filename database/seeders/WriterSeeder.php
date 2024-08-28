@@ -7,24 +7,25 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 
-class AdminSeeder extends Seeder
+class WriterSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-        $user = User::query()->create([
-            "name" => 'admin',
+        $writer = User::query()->create([
+            "name" => 'writer',
             "ip" => '93.119.213.121',
-            "email" => 'admin@gmail.com',
+            "email" => 'writer@gmail.com',
             "phonenumber" => '05681871489',
             "password" => bcrypt('password')
         ]);
 
         $permission = Permission::query()->pluck('name')->toArray();
 
-        $user->givePermissionTo($permission);
+        $writer->givePermissionTo($permission);
 
-        $user->assignRole('admin');
-
+        $writer->assignRole('writer');
     }
-
 }
