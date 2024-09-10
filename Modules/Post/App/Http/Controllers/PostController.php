@@ -90,8 +90,6 @@ class PostController extends Controller
 
         return redirect()->route('posts.index')->with('success', 'Post Updated successfully.');
     }
-
-
     public function destroy($id)
     {
         $post = Post::find($id);

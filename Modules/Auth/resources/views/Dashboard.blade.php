@@ -19,22 +19,22 @@
             </button>
     </nav>
     <div class="container">
-        <h1><strong>Home Page :</strong></h1>
+        <h1><strong>🏠Home Page :</strong></h1>
         <hr>
-        <a  href="{{ route('posts.index') }}">Posts list</a>
+        <strong><a  href="{{ route('posts.index') }}">📫Posts list</a></strong>
         <hr>
         @can('create post')
-        <a  href="{{ route('posts.create') }}">Create post</a>
+        <strong><a  href="{{ route('posts.create') }}">⚒️Create post</a></strong>
         <hr>
         @endcan
         @role('admin')
-        <a  href= "{{ route('users')}}">Users</a>
+        <strong><a  href= "{{ route('users')}}">👥Users</a></strong>
         <hr>
         @endrole
         <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
             @csrf
             @method ('Delete')
-            <button type="submit" class="btn btn-danger">Logout</button>
+            <button type="submit" class="btn btn-danger">🚶Logout</button>
         </form>
 
 

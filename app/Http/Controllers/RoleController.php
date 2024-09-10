@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Database\Seeders\RoleSeeder;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+//use Spatie\Permission\Contracts\Role;
+use Spatie\Permission\Models\Permission;
+
 
 class RoleController extends Controller
 {
@@ -48,11 +52,40 @@ class RoleController extends Controller
 
           return redirect('roles');
     }
+
     public function destroy($id)
     {
         $role = Role::find($id);
         $role->delete();
         return redirect('roles');
+    }
+
+    public function addPermission(Request $request)
+    {
+        $permissions = [
+            'cr7',
+            'cr6'
+        ];
+
+        foreach ($permissions as $permission) {
+          Permission::create(['name' => $permission]);
+        }
+    }
+    public function setRole(User $user)
+    {
+        $users = User::all();
+        $roles = Role::all();
+        return view('setRole' , compact('users' , 'roles' , 'user'));
+    }
+    public function setRole2(Request $request ,User $user)
+    {
+        $request->validate([
+            'role' => 'required'
+          ]);
+
+        $user->assignRole($request->role);
+
+        return redirect()->route('users');
     }
 
 }

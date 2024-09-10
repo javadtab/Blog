@@ -21,29 +21,29 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard') }}">Home Page</a>
+                        <a class="nav-link" href="{{ route('dashboard') }}">🏠Home Page</a>
                     </li>
                     @can('create post')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('posts.create') }}">Create Post</a>
+                        <a class="nav-link" href="{{ route('posts.create') }}">⚒️Create Post</a>
                     </li>
                     @endcan
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('posts.index') }}">Posts List</a>
+                        <a class="nav-link" href="{{ route('posts.index') }}">📫Posts List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profile/' . Auth::user()->id . '/edit') }}">Edit Profile</a>
+                        <a class="nav-link" href="{{ url('/profile/' . Auth::user()->id . '/edit') }}">🔗Edit Profile</a>
                     </li>
                     @role('admin')
                         <li class="nav-item">
-                            <a class= "nav-link" href= "/users">Users</a>
+                            <a class= "nav-link" href= "/users">👥Users</a>
                         </li>
                    @endrole
                 </ul>
                 <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
                     @csrf
                     @method ('Delete')
-                    <button type="submit" class="btn btn-danger">Logout</button>
+                    <button type="submit" class="btn btn-danger">🚶Logout</button>
                 </form>
             </div>
         </div>

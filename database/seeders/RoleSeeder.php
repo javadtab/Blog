@@ -12,14 +12,12 @@ class RoleSeeder extends Seeder
     {
         $roles = [
             'admin',
-            'user',
-            'writer'
+            'writer',
+            'user'
         ];
 
-        $role= collect($roles)->map(function ($role) {
-            return ['name' => $role, 'guard_name' => 'web'];
-        });
-
-        Role::insert($role->toArray());
+        foreach( $roles as $role) {
+            Role::create(['name' => $role]);
+        }
     }
 }

@@ -17,8 +17,12 @@
                                 <a class="nav-link btn-dark" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn-dark" href="{{ route('role') }}">Role</a>
+                                <a class="nav-link btn-dark" href="{{ route('createUser') }}">Add User</a>
                             </li>
+                           <li class="nav-item">
+                                <a class="nav-link btn-dark" href="{{ route('role') }}">AddRole</a>
+                            </li>
+
                         </ul>
                         <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
                             @csrf
@@ -56,6 +60,9 @@
                                     <td><a href="{{ url('/users.admin/' . $user->id . '/edit') }}" class="btn btn-success"
                                             role="button">Edit Pass</a>
                                     </td>
+                                    <td><a href="{{ url('/users.admin/' . $user->id . '/setRole') }}" class="btn btn-warning"
+                                        role="button">Set Role</a>
+                                   </td>
                                     @can('delete user')
                                         <td>
                                             <form method="POST" action="{{ url('/users/' . $user->id . '/delete') }}">

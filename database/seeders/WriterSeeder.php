@@ -26,6 +26,5 @@ class WriterSeeder extends Seeder
 
         $writer->givePermissionTo(['create post','read post','edit post']);
 
-        $writer->assignRole('writer');
     }
 }
