@@ -18,11 +18,10 @@ Route::get('/roles/{role}', [RoleController::class ,'show'])->name('roles.show')
 Route::get('/roles/{role}/edit',[ RoleController::class ,'edit'])->name('roles.edit');
 Route::delete('/roles/delete/{role}', [RoleController::class, 'destroy']);
 
-Route::get('/users.admin/{user}/setRole' , [RoleController::class ,'setRole']);
-Route::put('/users.admin/setRole/store', [RoleController::class, 'assignRole'])->name('assign.role');
 
-Route::get('/users/setRole' ,[ RoleController::class, 'setRole'])->name('setRole');
-Route::post('/users/setRole' ,[ RoleController::class, 'setRole2'])->name('setRole2');
+Route::get('/users/{user_id}/roles' ,[ RoleController::class, 'setRole'])->name('setRole');
+Route::post('/users/setRole', [ RoleController::class, 'updateRole'])->name('updateRole');
+
 Route::get('/Permissionfor' ,[RoleController::class, 'addPermission']);
 
 # Auth routes

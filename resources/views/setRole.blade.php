@@ -1,9 +1,8 @@
 @extends('layouts.app')
-
 @section('content')<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-
+           <h1>Assign Role to {{$user->name}}</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,25 +20,19 @@
 <div class="container">
     <div class="titlebar">
     <div>
-          <div>
-                <form method="Post" action="{{ route('setRole2') }}">
-                   @csrf
-                    @foreach ($roles as $role)
-                    <div>
-                        <input
-                        @if ($user->hasRole($role->name))
-                            @checked(true)
-                        @if ($user->syncRoles($role->name))
-                        @endif
-                        @endif
-                        type="checkbox" name="role" value="{{$role->name}}">  {{$role->name}}
-                    </div>
-                @endforeach
-                    <div>
+        <div>
+                <form action="{{url('/users/setRole')}}"  method="POST">
+                    @csrf
+                    <select name="role_name" class="form-select">
+                            @foreach ($roles as $role)
+                            <option value="{{$role->name}}">{{$role->name}}</option>
+                            @endforeach
+                        </select>
+                        <input type="hidden" name="user_id" value="{{$user->id}}">
                         <br>
-                        <button type="submit" class="btn btn-success">submit</button>
-                    </div>
+                        <button type="submit" class="btn btn-success">Assign Role</button>
                     <hr>
-            </div>
+                </form>
+        </div>
     </div>
 @endsection

@@ -57,6 +57,7 @@
                     <th scope="col">IP</th>
                     <th scope="col">Email</th>
                     <th scope="col">PhoneNumber</th>
+                    <th scope="col">Role</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,6 +66,7 @@
                     <td>{{ Auth::user()->ip }}</td>
                     <td>{{ Auth::user()->email }}</td>
                     <td>{{ Auth::user()->phonenumber}}</td>
+                    <td>{{ Auth::user()->getRoleNAmes()}}</td>
                 </tr>
             </tbody>
         </table>

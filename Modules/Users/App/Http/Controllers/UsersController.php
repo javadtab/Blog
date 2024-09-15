@@ -4,21 +4,19 @@ namespace Modules\Users\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Hash;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Validation\Rules;
 use Modules\Users\App\Models\User;
-use Spatie\Permission\Contracts\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 use Stevebauman\Location\Facades\Location;
 class UsersController extends Controller
 {
     public function index()
     {
-        return view('users::index',[
-            'users' => User::all()
-        ]);
+        $role = Role::all();
+        $users = User::all();
+        return view('users::index',compact('users' , 'role'));
     }
     public function createUser()
     {

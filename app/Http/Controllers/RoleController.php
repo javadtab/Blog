@@ -71,21 +71,24 @@ class RoleController extends Controller
           Permission::create(['name' => $permission]);
         }
     }
-    public function setRole(User $user)
+    public function setRole(User $user, $id , Role $role )
     {
-        $users = User::all();
         $roles = Role::all();
-        return view('setRole' , compact('users' , 'roles' , 'user'));
+        $user = User::find($id);
+
+        return view('setRole' , compact( 'user','roles', 'role'));
     }
-    public function setRole2(Request $request ,User $user)
+    public function updateRole(Request $request)
     {
-        $request->validate([
-            'role' => 'required'
-          ]);
+        $user = User::find($request->input('user_id'));
 
-        $user->assignRole($request->role);
+        if(!$user){
+            return redirect()->route('users')->with('message' , 'User is not exist');
+        }
 
-        return redirect()->route('users');
+            $user->assignRole($request->input('role_name'));
+
+           return redirect()->route('users');
     }
 
 }

@@ -19,7 +19,7 @@
                             <li class="nav-item">
                                 <a class="nav-link btn-dark" href="{{ route('createUser') }}">Add User</a>
                             </li>
-                           <li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link btn-dark" href="{{ route('role') }}">AddRole</a>
                             </li>
 
@@ -40,6 +40,7 @@
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Role</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
@@ -51,18 +52,19 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td>{{ App\Models\User::find($user->id)->roles->pluck('name') }}</td>
                                     <td><a href="{{ url('/users/' . $user->id) }}" class="btn btn-primary"
                                             role="button">Profile</a>
                                     </td>
-                                   <!-- <td><a href="{{ url('/users/' . $user->id . '/permision') }}" class="btn btn-warning"
-                                            role="button">Permisions</a>
-                                    </td> -->
+                                    <!-- <td><a href="{{ url('/users/' . $user->id . '/permision') }}" class="btn btn-warning"
+                                                                    role="button">Permisions</a>
+                                                            </td> -->
                                     <td><a href="{{ url('/users.admin/' . $user->id . '/edit') }}" class="btn btn-success"
                                             role="button">Edit Pass</a>
                                     </td>
-                                    <td><a href="{{ url('/users.admin/' . $user->id . '/setRole') }}" class="btn btn-warning"
-                                        role="button">Set Role</a>
-                                   </td>
+                                    <td><a href="{{ url('/users/' . $user->id . '/roles') }}" class="btn btn-warning"
+                                            role="button">Set Role</a>
+                                    </td>
                                     @can('delete user')
                                         <td>
                                             <form method="POST" action="{{ url('/users/' . $user->id . '/delete') }}">

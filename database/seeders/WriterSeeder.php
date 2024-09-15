@@ -25,6 +25,7 @@ class WriterSeeder extends Seeder
         Permission::query()->pluck('name')->toArray();
 
         $writer->givePermissionTo(['create post','read post','edit post']);
+        $writer->assignRole('writer');
 
     }
 }

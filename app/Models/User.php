@@ -2,18 +2,15 @@
 
 namespace App\Models;
 
-use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Modules\Post\App\Models\Post;
-use Spatie\Permission\Traits\HasPermissions;
-use Spatie\Permission\Traits\HasRoles;
 
 class User extends  Authenticatable
 {
-    use HasFactory, Notifiable , HasRoles , HasPermissions;
+    use HasFactory, Notifiable , HasRoles;
 
     public function posts()
     {
