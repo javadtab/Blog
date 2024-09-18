@@ -76,7 +76,7 @@ class RoleController extends Controller
         $roles = Role::all();
         $user = User::find($id);
 
-        return view('setRole' , compact( 'user','roles', 'role'));
+        return view('admin.roles.setRole' , compact( 'user','roles', 'role'));
     }
     public function updateRole(Request $request)
     {
