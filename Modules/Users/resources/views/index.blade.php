@@ -4,7 +4,7 @@
         <div class="titlebar">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                        <h1>User List</h1>
+                    <h1>User List</h1>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -55,8 +55,8 @@
                                             role="button">Profile</a>
                                     </td>
                                     <!-- <td><a href="{{ url('/users/' . $user->id . '/permision') }}" class="btn btn-warning"
-                                                                    role="button">Permisions</a>
-                                                            </td> -->
+                                                                                    role="button">Permisions</a>
+                                                                            </td> -->
                                     <td><a href="{{ url('/users.admin/' . $user->id . '/edit') }}" class="btn btn-success"
                                             role="button">Edit Pass</a>
                                     </td>
